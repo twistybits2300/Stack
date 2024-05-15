@@ -29,4 +29,11 @@ public struct Stack<T> {
     public mutating func pop() -> T? {
         storage.popLast()
     }
+
+    /// Provides a way of looking at the top element of the stack without mutating
+    /// its contents.
+    /// - Returns: The item at the top of the stack. May be `nil` if the stack is empty.
+    public func peek() -> T? {
+        storage.last
+    }
 }

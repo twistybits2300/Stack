@@ -4,6 +4,6 @@ A simple value semantics implementation of a stack, using an array for its stora
 
 ### to do
 - [x] `func push(_ value: T)`
-- [ ] `func pop() -> T?`
-- [ ] `func peek() -> T?`
+- [x] `func pop() -> T?`
+- [x] `func peek() -> T?`
 - [ ] `var isEmpty: Bool`
