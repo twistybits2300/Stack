@@ -66,6 +66,18 @@ final class StackTests: XCTestCase {
 
         XCTAssertEqual(sut.peek(), StackFixture.pushedLetter)
     }
+
+    /// Validates that `isEmpty` returns `true` when the stack is empty.
+    func test_isEmpty_true() throws {
+        let sut = fixture.makeEmptySUT()
+        XCTAssertTrue(sut.isEmpty)
+    }
+
+    /// Validates that `isEmpty` returns `false` when the stack is not empty.
+    func test_isEmpty_false() throws {
+        let sut = fixture.makeExampleSUT()
+        XCTAssertFalse(sut.isEmpty)
+    }
 }
 
 struct StackFixture {

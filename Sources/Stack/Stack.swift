@@ -36,4 +36,9 @@ public struct Stack<T> {
     public func peek() -> T? {
         storage.last
     }
+
+    /// Returns `true` if the stack is currently empty; `false` otherwise.
+    public var isEmpty: Bool {
+        storage.isEmpty
+    }
 }
