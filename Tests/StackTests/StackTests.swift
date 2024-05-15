@@ -24,6 +24,23 @@ final class StackTests: XCTestCase {
         let sut = fixture.makePushedLetterSUT()
         XCTAssertEqual(sut.storage, fixture.expectedPushedArray)
     }
+
+    /// Validates that `pop()` returns `nil` when the stack is empty.
+    func test_pop_returns_nil_when_empty() throws {
+        var sut = fixture.makeEmptySUT()
+        XCTAssertNil(sut.pop())
+    }
+
+    /// Validates that `pop()` returns the top item from the stack.
+    func test_pop() throws {
+        var sut = fixture.makePushedLetterSUT()
+        XCTAssertEqual(sut.storage, fixture.expectedPushedArray)
+
+        let poppedLetter = sut.pop()
+        XCTAssertEqual(poppedLetter, StackFixture.pushedLetter)
+
+        XCTAssertEqual(sut.storage, fixture.exampleArray)
+    }
 }
 
 struct StackFixture {

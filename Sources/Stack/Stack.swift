@@ -23,4 +23,10 @@ public struct Stack<T> {
     public mutating func push(_ value: T) {
         storage.append(value)
     }
+    
+    /// Pops the current value on the top of the stack.
+    /// - Returns: The current value on the top of the stack. May be `nil`.
+    public mutating func pop() -> T? {
+        storage.popLast()
+    }
 }
