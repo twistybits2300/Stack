@@ -78,6 +78,19 @@ final class StackTests: XCTestCase {
         let sut = fixture.makeExampleSUT()
         XCTAssertFalse(sut.isEmpty)
     }
+
+    /// Validates that `count` returns zero when the stack is empty.
+    func test_count_empty() throws {
+        let sut = fixture.makeEmptySUT()
+        XCTAssertEqual(sut.count, 0)
+    }
+
+    /// Validates that `count` returns the expected value.
+    func test_count() throws {
+        let expectedCount = fixture.exampleArray.count
+        let sut = fixture.makeExampleSUT()
+        XCTAssertEqual(sut.count, expectedCount)
+    }
 }
 
 struct StackFixture {

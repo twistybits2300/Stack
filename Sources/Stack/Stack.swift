@@ -41,4 +41,9 @@ public struct Stack<T> {
     public var isEmpty: Bool {
         storage.isEmpty
     }
+    
+    /// Returns the number of items currently on the stack.
+    public var count: Int {
+        storage.count
+    }
 }
